@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void listMascotas(){
         mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota("Ivana ",R.drawable.foto_perro,0));
-        mascotas.add(new Mascota("Poto ",R.drawable.foto_perro,0));
-        mascotas.add(new Mascota("Gary ",R.drawable.foto_perro,0));
+        mascotas.add(new Mascota("Ivana ",R.drawable.perro1,0));
+        mascotas.add(new Mascota("Poto ",R.drawable.perro2,0));
+        mascotas.add(new Mascota("Gary ",R.drawable.perro3,0));
         mascotas.add(new Mascota("Chester ",R.drawable.foto_perro,0));
-        mascotas.add(new Mascota("Fifu ",R.drawable.foto_perro,0));
+        mascotas.add(new Mascota("Fifu ",R.drawable.perro4,0));
     }
 
     public  void getAdaptador(){

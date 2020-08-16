@@ -4,5 +4,6 @@
     <dimen name="cvtexto">30dp</dimen>
     <dimen name="cvpadding">10dp</dimen>
     <dimen name="tbelevation">4dp</dimen>
+    <dimen name="cvsizecard">250dp</dimen>
 
 </resources>

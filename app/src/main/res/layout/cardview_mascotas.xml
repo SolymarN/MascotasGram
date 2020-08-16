@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/imgFotocv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/foto_perro" />
+            android:layout_height="@dimen/cvsizecard"
+            android:src="@drawable/perro3" />
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
