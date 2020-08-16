@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/cvMascota"
+    card_view:cardCornerRadius="@dimen/cvradio"
+    card_view:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/cvpadding">
+        <ImageView
+            android:id="@+id/imgFotocv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/foto_perro" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnhuesoBlancocv"
+                android:src="@drawable/rsz_dog_bone_white_100"/>
+
+            <TextView
+                android:id="@+id/tvNombrecv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="cursive"
+                android:text="@string/nombreMascota"
+                android:textSize="@dimen/cvtexto" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right">
+            <TextView
+                android:id="@+id/tvRaitingcv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/raitingMascota"
+                android:layout_gravity="center"
+                android:fontFamily="cursive"
+                android:textSize="@dimen/cvtexto"/>
+
+            <ImageView
+                android:id="@+id/imghuesoAmarillocv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/rsz_dog_bone_yellow_100"
+                />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+</androidx.cardview.widget.CardView>

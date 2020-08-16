@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cvradio">4dp</dimen>
+    <dimen name="cvtexto">30dp</dimen>
+    <dimen name="cvpadding">10dp</dimen>
+    <dimen name="tbelevation">4dp</dimen>
+
+</resources>
