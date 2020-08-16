@@ -17,7 +17,8 @@
             android:id="@+id/imgFotocv"
             android:layout_width="match_parent"
             android:layout_height="@dimen/cvsizecard"
-            android:src="@drawable/perro3" />
+            android:src="@drawable/perro3"
+            android:background="@drawable/borde"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -26,11 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/colorAccent">
+            android:background="@color/colorDivisor">
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnhuesoBlancocv"
+                android:background="@null"
                 android:src="@drawable/rsz_dog_bone_white_100"/>
 
             <TextView
@@ -53,7 +55,8 @@
                 android:text="@string/raitingMascota"
                 android:layout_gravity="center"
                 android:fontFamily="cursive"
-                android:textSize="@dimen/cvtexto"/>
+                android:textSize="@dimen/cvtexto"
+                android:textColor="@color/colorTextoSecundario"/>
 
             <ImageView
                 android:id="@+id/imghuesoAmarillocv"

@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar miActionBar = findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         listaMascotas = findViewById(R.id.rvListaMascota);
         //definir como mostrar el recycler : como lista
         LinearLayoutManager llm = new LinearLayoutManager(this);

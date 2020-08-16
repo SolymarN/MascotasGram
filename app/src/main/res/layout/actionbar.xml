@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="?attr/actionBarSize"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
     android:elevation="@dimen/tbelevation"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:popupTheme="@style/Theme.AppCompat.Light">
 
+    <ImageButton
+        android:id="@+id/btn_imgLogo"
+        android:layout_width="@dimen/micono"
+        android:layout_height="@dimen/micono"
+        android:background="@drawable/cat_footprint_48"
+        android:layout_gravity="start"
+        android:layout_margin="5dp"
+        />
 
+    <TextView
+        android:id="@+id/tv_tituloapp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/colorTextoPrincipal"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"/>
 </androidx.appcompat.widget.Toolbar>

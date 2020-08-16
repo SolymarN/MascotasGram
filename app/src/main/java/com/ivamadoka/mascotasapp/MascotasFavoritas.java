@@ -20,6 +20,7 @@ public class MascotasFavoritas extends AppCompatActivity {
         Toolbar miActionBar = findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         //recepcion de parametros con Bundle
         Bundle parametros = getIntent().getExtras();
