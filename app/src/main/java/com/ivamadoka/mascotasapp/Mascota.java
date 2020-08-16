@@ -1,7 +1,9 @@
 package com.ivamadoka.mascotasapp;
 
-public class Mascota {
+import java.io.Serializable;
 
+public class Mascota implements Serializable {
+//implements Serializable   para q sea serailizable
     private String nombre;
     private int foto;
     private int raiting;

@@ -22,14 +22,15 @@ public class MascotasFavoritas extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //recepcion de parametros con Bundle
-        /*Bundle parametros = getIntent().getExtras();
-        mascotasFavoritas = (ArrayList<Mascota>) parametros.getSerializable("listMascota");
-*/
+        Bundle parametros = getIntent().getExtras();
+        mascotasFavoritas = (ArrayList<Mascota>) parametros.getSerializable(getResources().getString(R.string.mascotasFavoritas));
+
         listaMascotasFavoritas = findViewById(R.id.rvListaMascotaFavorita);
+
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         listaMascotasFavoritas.setLayoutManager(llm);
-        listMascotas();
+       // listMascotas();
         getAdaptador();
 
     }

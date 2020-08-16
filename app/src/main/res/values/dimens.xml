@@ -2,7 +2,7 @@
 <resources>
     <dimen name="cvradio">4dp</dimen>
     <dimen name="cvtexto">30dp</dimen>
-    <dimen name="cvpadding">10dp</dimen>
+    <dimen name="cvpadding">13dp</dimen>
     <dimen name="tbelevation">4dp</dimen>
     <dimen name="cvsizecard">250dp</dimen>
 
