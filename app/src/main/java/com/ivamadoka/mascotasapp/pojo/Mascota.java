@@ -1,4 +1,4 @@
-package com.ivamadoka.mascotasapp;
+package com.ivamadoka.mascotasapp.pojo;
 
 import java.io.Serializable;
 

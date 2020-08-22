@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.ivamadoka.mascotasapp.adapter.MascotaAdapter;
+import com.ivamadoka.mascotasapp.pojo.Mascota;
+
 import java.util.ArrayList;
 
-public class MascotasFavoritas extends AppCompatActivity {
+public class MascotasFavoritasActivity extends AppCompatActivity {
 
     private RecyclerView listaMascotasFavoritas;
     ArrayList<Mascota> mascotasFavoritas;
@@ -38,9 +41,9 @@ public class MascotasFavoritas extends AppCompatActivity {
     public void listMascotas(){
         mascotasFavoritas = new ArrayList<Mascota>();
 
-        mascotasFavoritas.add(new Mascota("Gary ",R.drawable.perro3,23));
+        mascotasFavoritas.add(new Mascota("Ivana ",R.drawable.perro3,23));
         mascotasFavoritas.add(new Mascota("Poto ",R.drawable.perro2,11));
-        mascotasFavoritas.add(new Mascota("Ivana ",R.drawable.perro1,8));
+        mascotasFavoritas.add(new Mascota("Gary ",R.drawable.perro1,8));
         mascotasFavoritas.add(new Mascota("Chester ",R.drawable.foto_perro,2));
         mascotasFavoritas.add(new Mascota("Fifu ",R.drawable.perro4,1));
     }

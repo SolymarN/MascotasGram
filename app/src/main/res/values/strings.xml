@@ -4,5 +4,18 @@
     <string name="raitingMascota">3</string>
     <string name="top5">Top 5</string>
     <string name="mascotasFavoritas">MascotasFavoritas</string>
+    <string name="txtMenuContacto">Contacto</string>
+    <string name="txtMenuAcerca">Acerca de</string>
+    <string name="tietNombre">Nombre</string>
+    <string name="tietCorreo">Correo</string>
+    <string name="tietMensaje">Mensaje</string>
+    <string name="btnEnviar">Enviar Comentario</string>
+    <string name="tvDevNombreApp">PetGram Mascotas App</string>
+    <string name="tvDevVersion">Version 1.0.1</string>
+    <string name="tvDevContacto">Ivamadoka@gmail.com</string>
+    <string name="tvDevLicencia">2020 Ivamadoka Dev</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

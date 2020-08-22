@@ -1,4 +1,4 @@
-package com.ivamadoka.mascotasapp;
+package com.ivamadoka.mascotasapp.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.ivamadoka.mascotasapp.pojo.Mascota;
+import com.ivamadoka.mascotasapp.R;
 
 import java.util.ArrayList;
 

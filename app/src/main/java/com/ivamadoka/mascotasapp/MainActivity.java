@@ -3,14 +3,21 @@ package com.ivamadoka.mascotasapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
+import com.ivamadoka.mascotasapp.adapter.MascotaAdapter;
+import com.ivamadoka.mascotasapp.adapter.PageAdapter;
+import com.ivamadoka.mascotasapp.fragments.HomeFragment;
+import com.ivamadoka.mascotasapp.fragments.PerfilFragment;
+import com.ivamadoka.mascotasapp.pojo.Mascota;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,15 +26,21 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
+    private Toolbar miActionBar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar miActionBar = findViewById(R.id.miActionBar);
+        miActionBar = findViewById(R.id.miActionBar);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayoutt);
+        viewPager =(ViewPager) findViewById(R.id.viewPager);
+        setUpViewPager();
         setSupportActionBar(miActionBar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
+/*
         listaMascotas = findViewById(R.id.rvListaMascota);
         //definir como mostrar el recycler : como lista
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -37,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
         listMascotas();
         //adaptador
         getAdaptador();
-
+*/
     }
 
     public void listMascotas(){
         mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota("Ivana ",R.drawable.perro1,0));
+        mascotas.add(new Mascota("Gary ",R.drawable.perro1,0));
         mascotas.add(new Mascota("Poto ",R.drawable.perro2,0));
-        mascotas.add(new Mascota("Gary ",R.drawable.perro3,0));
+        mascotas.add(new Mascota("Ivana ",R.drawable.perro3,0));
         mascotas.add(new Mascota("Chester ",R.drawable.foto_perro,0));
         mascotas.add(new Mascota("Fifu ",R.drawable.perro4,0));
         mascotas.add(new Mascota("Chichi ",R.drawable.perro5,0));
@@ -83,13 +96,41 @@ public class MainActivity extends AppCompatActivity {
 
                 bundle.putSerializable(getResources().getString(R.string.mascotasFavoritas), (Serializable) mascotas);
 
-                Intent intent = new Intent(this, MascotasFavoritas.class);
+                Intent intent = new Intent(this, MascotasFavoritasActivity.class);
                 //intent.putExtra("listMascota", mascotas);
                 intent.putExtras(bundle);
                 startActivity(intent);
                 break;
 
+            case R.id.mAcercaDe:
+
+                Intent intentAcercaDe = new Intent(this, AcercaDeActivity.class);
+                startActivity(intentAcercaDe);
+
+                break;
+
+            case R.id.mContacto:
+                Intent intentContacto = new Intent(this, ContactoActivity.class);
+                startActivity(intentContacto);
+                break;
+
         }
         return super.onOptionsItemSelected(item);
+    }
+    private ArrayList<Fragment> agregarFragmets(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new HomeFragment());
+        fragments.add(new PerfilFragment());
+        return  fragments;
+    }
+    public  void setUpViewPager(){
+        //poner en orbita los fragment
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),0,agregarFragmets()));
+        tabLayout.setupWithViewPager(viewPager);
+        //colocar icono al tab con posicion 0
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_action_home);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_action_perfil);
+
+
     }
 }

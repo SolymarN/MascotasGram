@@ -6,4 +6,11 @@
         android:orderInCategory="100"
         app:showAsAction="always"
         android:icon="@drawable/star_48"></item>
+
+    <item android:id="@+id/mContacto"
+        android:title="@string/txtMenuContacto"
+        android:orderInCategory="100"></item>
+    <item android:id="@+id/mAcercaDe"
+        android:title="@string/txtMenuAcerca"
+        android:orderInCategory="101"></item>
 </menu>
