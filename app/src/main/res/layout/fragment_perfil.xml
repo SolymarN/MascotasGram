@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.PerfilFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llperfil"
+        android:orientation="vertical">
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/circularImageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:src="@drawable/perro3"
+            app:civ_border="true"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="5dp"
+            app:civ_shadow="true"
+            app:civ_shadow_color="@color/colorPrimaryDark"
+            app:civ_shadow_radius="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            android:textSize="@dimen/cvtexto"
+            android:text="@string/nombreMascota">
+
+        </TextView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaMascotaPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/llperfil">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>
