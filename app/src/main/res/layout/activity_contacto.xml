@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/paddingContacto"
     tools:context=".ContactoActivity">
-
+    <include
+        android:id="@+id/miActionBar"
+        layout="@layout/actionbar"></include>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tilNombre">
+        android:id="@+id/tilNombre"
+        android:padding="@dimen/paddingContacto"
+        android:layout_below="@id/miActionBar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tietNombre"
@@ -24,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tilCorreo"
+        android:padding="@dimen/paddingContacto"
         android:layout_below="@id/tilNombre">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -36,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tilMensaje"
+        android:padding="@dimen/paddingContacto"
         android:layout_below="@id/tilCorreo">
 
         <com.google.android.material.textfield.TextInputEditText

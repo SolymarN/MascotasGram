@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ivamadoka.mascotasapp.db.ConstructorBaseDatosService;
 import com.ivamadoka.mascotasapp.pojo.Mascota;
 import com.ivamadoka.mascotasapp.R;
 
@@ -56,9 +57,16 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
             public void onClick(View view) {
 
                 Toast.makeText(activity,"Diste like a "+mascota.getNombre(),Toast.LENGTH_SHORT).show();
-                int meGusta = mascota.getRaiting();
+              /*  int meGusta = mascota.getRaiting();
                 mascota.setRaiting(++meGusta);
-                mascotaViewHolder.tvRaiting.setText(Integer.toString(mascota.getRaiting()));
+*/
+                ConstructorBaseDatosService constructorContactos = new ConstructorBaseDatosService(activity);
+                //el activity representa el contexto en q estamos trabajando
+                constructorContactos.darLike(mascota);
+                constructorContactos.actualizarMascota(mascota,constructorContactos.obtenerLike(mascota) );
+                //mascotaViewHolder.tvRaiting.setText(Integer.toString(mascota.getRaiting()));
+
+                mascotaViewHolder.tvRaiting.setText(String.valueOf(constructorContactos.obtenerLike(mascota)));
 
             }
         });

@@ -1,6 +1,7 @@
 package com.ivamadoka.mascotasapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,15 +14,21 @@ public class ContactoActivity extends AppCompatActivity {
     private EditText nombre;
     private EditText correo;
     private EditText mensaje;
+    private Toolbar miActionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacto);
+        miActionBar = findViewById(R.id.miActionBar);
         nombre = (EditText) findViewById(R.id.tietNombre);
         correo = (EditText) findViewById(R.id.tietCorreo);
         mensaje = (EditText) findViewById(R.id.tietMensaje);
         enviar = (Button) findViewById(R.id.btnEnviar);
+        setSupportActionBar(miActionBar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override

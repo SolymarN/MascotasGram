@@ -13,15 +13,17 @@ import android.view.ViewGroup;
 import com.ivamadoka.mascotasapp.R;
 import com.ivamadoka.mascotasapp.adapter.MascotaAdapter;
 import com.ivamadoka.mascotasapp.pojo.Mascota;
+import com.ivamadoka.mascotasapp.presentador.HomeFragmentPresenterController;
+import com.ivamadoka.mascotasapp.presentador.IHomeFragmentPresenter;
 
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link HomeFragment#newInstance} factory method to
+ * Use the {@link HomeFragmentViewController#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragmentViewController extends Fragment implements IHomeFragmentView {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,9 +36,10 @@ public class HomeFragment extends Fragment {
 
     ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
+    private IHomeFragmentPresenter iHomeFragmentPresenter;
 
 
-    public HomeFragment() {
+    public HomeFragmentViewController() {
         // Required empty public constructor
     }
 
@@ -49,8 +52,8 @@ public class HomeFragment extends Fragment {
      * @return A new instance of fragment HomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
+    public static HomeFragmentViewController newInstance(String param1, String param2) {
+        HomeFragmentViewController fragment = new HomeFragmentViewController();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -73,14 +76,12 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         listaMascotas = (RecyclerView) v.findViewById(R.id.rvListaMascota);
-        //definir como mostrar el recycler : como lista
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        listaMascotas.setLayoutManager(llm);
+        iHomeFragmentPresenter = new HomeFragmentPresenterController(getContext(), this);
+        // generarLinearLayoutVertical();
         //carga de datos
-        listMascotas();
+       // listMascotas();
         //adaptador
-        getAdaptador();
+        //getAdaptador();
         return v ;
     }
 
@@ -101,5 +102,25 @@ public class HomeFragment extends Fragment {
         MascotaAdapter adaptador = new MascotaAdapter(mascotas, getActivity());
         listaMascotas.setAdapter(adaptador);
 
+    }
+
+    @Override
+    public void generarLinearLayoutVertical() {
+//definir como mostrar el recycler : como lista
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        listaMascotas.setLayoutManager(llm);
+    }
+
+    @Override
+    public MascotaAdapter crearAdaptador(ArrayList<Mascota> mascotas) {
+
+        MascotaAdapter adaptador = new MascotaAdapter(mascotas, getActivity());
+        return adaptador;
+    }
+
+    @Override
+    public void inicializarAdaptadorRV(MascotaAdapter adapter) {
+        listaMascotas.setAdapter(adapter);
     }
 }

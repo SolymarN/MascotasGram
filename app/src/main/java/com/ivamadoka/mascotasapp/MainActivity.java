@@ -11,11 +11,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.ivamadoka.mascotasapp.adapter.MascotaAdapter;
 import com.ivamadoka.mascotasapp.adapter.PageAdapter;
-import com.ivamadoka.mascotasapp.fragments.HomeFragment;
+import com.ivamadoka.mascotasapp.fragments.HomeFragmentViewController;
 import com.ivamadoka.mascotasapp.fragments.PerfilFragment;
 import com.ivamadoka.mascotasapp.pojo.Mascota;
 
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar miActionBar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private FloatingActionButton fabCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +41,17 @@ public class MainActivity extends AppCompatActivity {
         miActionBar = findViewById(R.id.miActionBar);
         tabLayout = (TabLayout) findViewById(R.id.tabLayoutt);
         viewPager =(ViewPager) findViewById(R.id.viewPager);
+        fabCamera = (FloatingActionButton) findViewById(R.id.fabPhoto);
         setUpViewPager();
         setSupportActionBar(miActionBar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        fabCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Tomando foto...", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();            }
+        });
 /*
         listaMascotas = findViewById(R.id.rvListaMascota);
         //definir como mostrar el recycler : como lista
@@ -119,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private ArrayList<Fragment> agregarFragmets(){
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(new HomeFragment());
+        fragments.add(new HomeFragmentViewController());
         fragments.add(new PerfilFragment());
         return  fragments;
     }
