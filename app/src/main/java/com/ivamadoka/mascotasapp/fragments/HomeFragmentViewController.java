@@ -88,9 +88,9 @@ public class HomeFragmentViewController extends Fragment implements IHomeFragmen
     public void listMascotas(){
         mascotas = new ArrayList<Mascota>();
         mascotas.add(new Mascota("Ivana ",R.drawable.perro1,0));
-        mascotas.add(new Mascota("Poto ",R.drawable.perro2,0));
-        mascotas.add(new Mascota("Gary ",R.drawable.perro3,0));
-        mascotas.add(new Mascota("Chester ",R.drawable.foto_perro,0));
+        mascotas.add(new Mascota("Gary ",R.drawable.perro2,0));
+        mascotas.add(new Mascota("Chester",R.drawable.perro3,0));
+        mascotas.add(new Mascota("Poto",R.drawable.foto_perro,0));
         mascotas.add(new Mascota("Fifu ",R.drawable.perro4,0));
         mascotas.add(new Mascota("Chichi ",R.drawable.perro5,0));
         mascotas.add(new Mascota("Oppai ",R.drawable.perro6,0));

@@ -6,6 +6,7 @@
     <string name="mascotasFavoritas">MascotasFavoritas</string>
     <string name="txtMenuContacto">Contacto</string>
     <string name="txtMenuAcerca">Acerca de</string>
+    <string name="txtMenuConfigCuenta">Configurar Cuenta</string>
     <string name="tietNombre">Nombre</string>
     <string name="tietCorreo">Correo</string>
     <string name="tietMensaje">Mensaje</string>
@@ -16,6 +17,9 @@
     <string name="tvDevLicencia">2020 Ivamadoka Dev</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnGuardarCuenta">Guardar Cuenta</string>
+    <string name="tilCuenta">Escribe tu usuario</string>
+
 
 
 </resources>

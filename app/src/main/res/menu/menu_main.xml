@@ -13,4 +13,7 @@
     <item android:id="@+id/mAcercaDe"
         android:title="@string/txtMenuAcerca"
         android:orderInCategory="101"></item>
+    <item android:id="@+id/mConfigCuenta"
+        android:title="@string/txtMenuConfigCuenta"
+        android:orderInCategory="102"></item>
 </menu>

@@ -126,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentContacto);
                 break;
 
+            case R.id.mConfigCuenta:
+                Intent intentCuenta= new Intent(this, ConfigCuentaActivity.class);
+                startActivity(intentCuenta);
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }
