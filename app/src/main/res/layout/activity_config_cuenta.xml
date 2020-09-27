@@ -7,7 +7,7 @@
     tools:context=".ConfigCuentaActivity">
     <include
         android:id="@+id/miActionBar"
-        layout="@layout/actionbar"></include>
+        layout="@layout/actionbar"> </include>
     <TextView
         android:id="@+id/tv_tituloapp"
         android:layout_width="wrap_content"
