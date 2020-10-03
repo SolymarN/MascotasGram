@@ -27,7 +27,7 @@ public class ConfigCuentaActivity extends AppCompatActivity {
 
         edCuenta = (EditText) findViewById(R.id.tilCuenta);
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
-        
+
 
     }
 }

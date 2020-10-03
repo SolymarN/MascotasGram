@@ -9,6 +9,8 @@
     <dimen name="micono">35dp</dimen>
     <dimen name="paddingContacto">13dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="cvsizefotogrid">130dp</dimen>
+    <dimen name="cvsizehuesogrid">27dp</dimen>
 
 
 </resources>

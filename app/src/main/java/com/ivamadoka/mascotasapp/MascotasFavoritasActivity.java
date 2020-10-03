@@ -11,6 +11,7 @@ import android.os.Bundle;
 import com.ivamadoka.mascotasapp.adapter.MascotaAdapter;
 import com.ivamadoka.mascotasapp.fragments.IHomeFragmentView;
 import com.ivamadoka.mascotasapp.pojo.Mascota;
+import com.ivamadoka.mascotasapp.pojo.MascotaApi;
 import com.ivamadoka.mascotasapp.presentador.IMascotasFavoritasPresentador;
 import com.ivamadoka.mascotasapp.presentador.MascotasFavoritasPresentador;
 
@@ -22,7 +23,7 @@ public class MascotasFavoritasActivity extends AppCompatActivity  implements IMa
     private IMascotasFavoritasPresentador iMascotasFavoritasPresentador;
     private IHomeFragmentView homeFragmentView;
     private Activity activity;
-    ArrayList<Mascota> mascotasFavoritas;
+    ArrayList<MascotaApi> mascotasFavoritas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,7 @@ public class MascotasFavoritasActivity extends AppCompatActivity  implements IMa
 
         //recepcion de parametros con Bundle
         Bundle parametros = getIntent().getExtras();
-        mascotasFavoritas = (ArrayList<Mascota>) parametros.getSerializable(getResources().getString(R.string.mascotasFavoritas));
+        mascotasFavoritas = (ArrayList<MascotaApi>) parametros.getSerializable(getResources().getString(R.string.mascotasFavoritas));
 
         listaMascotasFavoritas = (RecyclerView) findViewById(R.id.rvListaMascotaFavorita);
         //        iHomeFragmentPresenter = new HomeFragmentPresenterController(getContext(), this);
@@ -49,7 +50,7 @@ public class MascotasFavoritasActivity extends AppCompatActivity  implements IMa
 */
     }
     public void listMascotas(){
-        mascotasFavoritas = new ArrayList<Mascota>();
+        ArrayList<Mascota> mascotasFavoritas = new ArrayList<Mascota>();
 
         mascotasFavoritas.add(new Mascota("Ivana ",R.drawable.perro3,23));
         mascotasFavoritas.add(new Mascota("Poto ",R.drawable.perro2,11));
@@ -71,7 +72,7 @@ public class MascotasFavoritasActivity extends AppCompatActivity  implements IMa
     }
 
     @Override
-    public MascotaAdapter crearAdaptador(ArrayList<Mascota> mascotas) {
+    public MascotaAdapter crearAdaptador(ArrayList<MascotaApi> mascotas) {
         MascotaAdapter adaptador = new MascotaAdapter(mascotas, activity);
         return adaptador;
     }

@@ -10,6 +10,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.ivamadoka.mascotasapp.pojo.Mascota;
+import com.ivamadoka.mascotasapp.pojo.MascotaApi;
 
 import java.util.ArrayList;
 
@@ -51,9 +52,9 @@ public class BaseDatosDao extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public ArrayList<Mascota> obtenerTodasMascotas() {
+    public ArrayList<MascotaApi> obtenerTodasMascotas() {
 
-        ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
+        ArrayList<MascotaApi> mascotas = new ArrayList<MascotaApi>();
         String query = "SELECT * FROM " + ConstanteBaseDatos.TABLE_PET;
         //ABRIR BD EN FORMA DE LECTURA O ESCRITURA
         SQLiteDatabase db = this.getWritableDatabase();
@@ -62,9 +63,9 @@ public class BaseDatosDao extends SQLiteOpenHelper {
 
         while (registros.moveToNext()) {
 
-            Mascota mascotaActual = new Mascota();
+            MascotaApi mascotaActual = new MascotaApi();
             //requerimos setear los campos del arreglo dentro de los set del VO
-            mascotaActual.setId(registros.getInt(0));
+        /*    mascotaActual.setId(registros.getInt(0));
             mascotaActual.setNombre(registros.getString(1));
             mascotaActual.setFoto(registros.getInt(2));
             mascotaActual.setRaiting(registros.getInt(3));
@@ -83,7 +84,7 @@ public class BaseDatosDao extends SQLiteOpenHelper {
             }
 
             mascotas.add(mascotaActual);
-
+*/
         }
         //CERRAR BD
         db.close();
@@ -123,8 +124,8 @@ public class BaseDatosDao extends SQLiteOpenHelper {
         return likes;
     }
 
-    public ArrayList<Mascota>  obtenerMascotasFavoritas(){
-        ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
+    public ArrayList<MascotaApi>  obtenerMascotasFavoritas(){
+        ArrayList<MascotaApi> mascotas = new ArrayList<MascotaApi>();
         Log.i("obtenerMascotasDao","antes query");
         String query = "SELECT * FROM " + ConstanteBaseDatos.TABLE_PET + " ORDER BY " + ConstanteBaseDatos.TABLE_PET_LIKES +" DESC LIMIT 5";
         Log.i("obtenerDaoquery",query);
@@ -134,13 +135,14 @@ public class BaseDatosDao extends SQLiteOpenHelper {
         Cursor registros = db.rawQuery(query, null);
 
         while (registros.moveToNext()) {
-            Mascota mascotaActual = new Mascota();
+            MascotaApi mascotaActual = new MascotaApi();
             //requerimos setear los campos del arreglo dentro de los set del VO
-            mascotaActual.setId(registros.getInt(0));
+            /*mascotaActual.setId(registros.getInt(0));
             mascotaActual.setNombre(registros.getString(1));
             mascotaActual.setFoto(registros.getInt(2));
             mascotaActual.setRaiting(registros.getInt(3));
             mascotas.add(mascotaActual);
+            */
 
         }
         db.close();

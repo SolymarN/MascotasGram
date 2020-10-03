@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.ivamadoka.mascotasapp.R;
 import com.ivamadoka.mascotasapp.pojo.Mascota;
+import com.ivamadoka.mascotasapp.pojo.MascotaApi;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public class ConstructorBaseDatosService {
         this.context = context;
     }
 
-    public ArrayList<Mascota> obtenerDatosMascotas(){
+    public ArrayList<MascotaApi> obtenerDatosMascotas(){
         //aqui ponemos que siempre sera un arreglo de tipo mascota
         //1. abrir conexion a la bd
         BaseDatosDao db = new BaseDatosDao(context);
@@ -27,7 +28,7 @@ public class ConstructorBaseDatosService {
         return db.obtenerTodasMascotas();
     }
 
-    public  ArrayList<Mascota> obtnerDatosMascotasFavoritas(){
+    public  ArrayList<MascotaApi> obtnerDatosMascotasFavoritas(){
         BaseDatosDao db = new BaseDatosDao(context);
         Log.i("obtenerMascotasFav","si");
         return db.obtenerMascotasFavoritas();

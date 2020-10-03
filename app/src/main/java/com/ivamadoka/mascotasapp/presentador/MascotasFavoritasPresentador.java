@@ -6,13 +6,14 @@ import com.ivamadoka.mascotasapp.IMascotasFavoritasActivityView;
 import com.ivamadoka.mascotasapp.db.ConstructorBaseDatosService;
 import com.ivamadoka.mascotasapp.fragments.IHomeFragmentView;
 import com.ivamadoka.mascotasapp.pojo.Mascota;
+import com.ivamadoka.mascotasapp.pojo.MascotaApi;
 
 import java.util.ArrayList;
 
 public class MascotasFavoritasPresentador implements  IMascotasFavoritasPresentador{
 
     private ConstructorBaseDatosService constructorBaseDatosService;
-    private ArrayList<Mascota> mascotasFav;
+    private ArrayList<MascotaApi> mascotasFav;
     private Context context;
   //  private IHomeFragmentView homeFragmentView;
     private IMascotasFavoritasActivityView iMascotasFavoritasActivityView;

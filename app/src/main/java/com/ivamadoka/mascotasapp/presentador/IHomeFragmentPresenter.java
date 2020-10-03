@@ -8,5 +8,8 @@ public interface IHomeFragmentPresenter {
     //list de consulta de mascotas
     public  void obtenerMascotasAll();
 
+    //list de json del web service
+    public void obtenerDatosRecientesApi();
+
 
 }

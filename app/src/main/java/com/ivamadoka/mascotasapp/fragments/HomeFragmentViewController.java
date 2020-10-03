@@ -3,6 +3,7 @@ package com.ivamadoka.mascotasapp.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import com.ivamadoka.mascotasapp.R;
 import com.ivamadoka.mascotasapp.adapter.MascotaAdapter;
 import com.ivamadoka.mascotasapp.pojo.Mascota;
+import com.ivamadoka.mascotasapp.pojo.MascotaApi;
 import com.ivamadoka.mascotasapp.presentador.HomeFragmentPresenterController;
 import com.ivamadoka.mascotasapp.presentador.IHomeFragmentPresenter;
 
@@ -34,7 +36,7 @@ public class HomeFragmentViewController extends Fragment implements IHomeFragmen
     private String mParam1;
     private String mParam2;
 
-    ArrayList<Mascota> mascotas;
+    ArrayList<MascotaApi> mascotas;
     private RecyclerView listaMascotas;
     private IHomeFragmentPresenter iHomeFragmentPresenter;
 
@@ -86,7 +88,7 @@ public class HomeFragmentViewController extends Fragment implements IHomeFragmen
     }
 
     public void listMascotas(){
-        mascotas = new ArrayList<Mascota>();
+        ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
         mascotas.add(new Mascota("Ivana ",R.drawable.perro1,0));
         mascotas.add(new Mascota("Gary ",R.drawable.perro2,0));
         mascotas.add(new Mascota("Chester",R.drawable.perro3,0));
@@ -112,8 +114,9 @@ public class HomeFragmentViewController extends Fragment implements IHomeFragmen
         listaMascotas.setLayoutManager(llm);
     }
 
+
     @Override
-    public MascotaAdapter crearAdaptador(ArrayList<Mascota> mascotas) {
+    public MascotaAdapter crearAdaptador(ArrayList<MascotaApi> mascotas) {
 
         MascotaAdapter adaptador = new MascotaAdapter(mascotas, getActivity());
         return adaptador;
@@ -122,5 +125,11 @@ public class HomeFragmentViewController extends Fragment implements IHomeFragmen
     @Override
     public void inicializarAdaptadorRV(MascotaAdapter adapter) {
         listaMascotas.setAdapter(adapter);
+    }
+
+    @Override
+    public void generarGridLayout() {
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(),2);
+        listaMascotas.setLayoutManager(gridLayoutManager);
     }
 }

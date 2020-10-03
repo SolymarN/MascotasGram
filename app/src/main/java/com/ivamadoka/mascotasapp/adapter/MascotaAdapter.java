@@ -15,16 +15,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ivamadoka.mascotasapp.db.ConstructorBaseDatosService;
 import com.ivamadoka.mascotasapp.pojo.Mascota;
 import com.ivamadoka.mascotasapp.R;
+import com.ivamadoka.mascotasapp.pojo.MascotaApi;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaViewHolder> {
 
     ArrayList<Mascota> mascotas;
+    ArrayList<MascotaApi> mascotasApi;
     Activity activity;
 
-    public MascotaAdapter(ArrayList<Mascota> mascotas, Activity activity) {
+  /*  public MascotaAdapter(ArrayList<Mascota> mascotas, Activity activity) {
         this.mascotas = mascotas;
+        this.activity = activity;
+    }
+
+   */
+
+    public MascotaAdapter(ArrayList<MascotaApi> mascotasApi, Activity activity) {
+        this.mascotasApi = mascotasApi;
         this.activity = activity;
     }
 
@@ -47,27 +57,39 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
         //paso de valores de la lista de datos que estara cargada
         //asociando cada elemento de la clase view holder con cada elemento de la clase principal
         //por posicion para setear el recurso que viene de la clase principal
-        final Mascota mascota = mascotas.get(position); //obtengo el objeto q esta iterando por la posicion
-        mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
+      //  final Mascota mascota = mascotas.get(position); //obtengo el objeto q esta iterando por la posicion
+        final MascotaApi mascotaApi = mascotasApi.get(position);
+
+       /* mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
         mascotaViewHolder.tvNombre.setText(mascota.getNombre());
         mascotaViewHolder.tvRaiting.setText(Integer.toString(mascota.getRaiting()));
+
+*/
+
+        Picasso.get().load(mascotaApi.getUrlFoto())
+                .placeholder(R.drawable.foto_perro)
+                .into(mascotaViewHolder.imgFoto);
+
+        mascotaViewHolder.tvNombre.setText(mascotaApi.getNombreCompleto());
+        mascotaViewHolder.tvRaiting.setText(Integer.toString(mascotaApi.getLikesFoto()));
 
         mascotaViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(activity,"Diste like a "+mascota.getNombre(),Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(activity,"Diste like a "+mascotasApi.getNombre(),Toast.LENGTH_SHORT).show();
               /*  int meGusta = mascota.getRaiting();
                 mascota.setRaiting(++meGusta);
 */
-                ConstructorBaseDatosService constructorContactos = new ConstructorBaseDatosService(activity);
+
+           /*     ConstructorBaseDatosService constructorContactos = new ConstructorBaseDatosService(activity);
                 //el activity representa el contexto en q estamos trabajando
                 constructorContactos.darLike(mascota);
                 constructorContactos.actualizarMascota(mascota,constructorContactos.obtenerLike(mascota) );
                 //mascotaViewHolder.tvRaiting.setText(Integer.toString(mascota.getRaiting()));
 
                 mascotaViewHolder.tvRaiting.setText(String.valueOf(constructorContactos.obtenerLike(mascota)));
-
+*/
             }
         });
 
@@ -77,7 +99,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.MascotaV
     @Override
     public int getItemCount() {
         //retorna tamano de la lista
-        return mascotas.size();
+        return mascotasApi.size();
     }
 
     public static class MascotaViewHolder extends RecyclerView.ViewHolder {

@@ -21,13 +21,14 @@ import com.ivamadoka.mascotasapp.adapter.PageAdapter;
 import com.ivamadoka.mascotasapp.fragments.HomeFragmentViewController;
 import com.ivamadoka.mascotasapp.fragments.PerfilFragment;
 import com.ivamadoka.mascotasapp.pojo.Mascota;
+import com.ivamadoka.mascotasapp.pojo.MascotaApi;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Mascota> mascotas;
+    ArrayList<MascotaApi> mascotas;
     private RecyclerView listaMascotas;
     private Toolbar miActionBar;
     private TabLayout tabLayout;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void listMascotas(){
-        mascotas = new ArrayList<Mascota>();
+        ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
         mascotas.add(new Mascota("Gary ",R.drawable.perro1,0));
         mascotas.add(new Mascota("Poto ",R.drawable.perro2,0));
         mascotas.add(new Mascota("Ivana ",R.drawable.perro3,0));
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.mrankin:
                 //Toast.makeText(this,"ir al rankin 5",Toast.LENGTH_SHORT).show();
-                mascotas = new ArrayList<Mascota>();
+                ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
 
                 mascotas.add(new Mascota("Gary ",R.drawable.perro3,23));
                 mascotas.add(new Mascota("Poto ",R.drawable.perro2,11));
